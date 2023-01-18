@@ -171,7 +171,7 @@ h3 {
     color:rgb(103, 163, 18)
 }
 
-h2:after {
+/* h2:after {
     display: block;
     height: 2px;
     background-color: rgb(99, 99, 194);
@@ -179,7 +179,7 @@ h2:after {
     width: 100px;
     margin: 0 auto;
     margin-top: 30px;
-}
+} */
 
 
 footer {
