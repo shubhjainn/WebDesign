@@ -161,3 +161,127 @@ p {
 /* #hero h1:nth-child(3) span {
 	animation-delay: 2.5s;
 } */
+
+
+#about{
+	background-color: #f8b382;
+}
+#about .about {
+
+	flex-direction: column-reverse;
+	text-align: center;
+	max-width: 600px;
+	margin: 0 auto;
+	padding: 100px 20px;
+}
+#about .row-bottom {
+	width: 400px;
+	height: 450px;
+}
+#about .row-up {
+	width: 100%;
+}
+#about .row-up h2 {
+	font-size: 1.8rem;
+	font-weight: 500;
+	letter-spacing: 0.2rem;
+	margin-bottom: 10px;
+}
+#about .row-up p {
+	margin-bottom: 20px;
+}
+#about .row-up .cta {
+	color: #466060;
+	margin-bottom: 50px;
+	padding: 10px 20px;
+	font-size: 2rem;
+}
+#about .row-bottom .about-img {
+	height: 100%;
+	width: 100%;
+	position: relative;
+	border: 10px solid white;
+}
+#about .row-bottom .about-img::after {
+	content: '';
+	position: absolute;
+	left: -33px;
+	top: 19px;
+	height: 98%;
+	width: 98%;
+	border: 7px solid #F8C7CC;
+	z-index: -1;
+}
+/* End About Section */
+
+
+/* certifications Section */
+#certifications .certifications {
+	flex-direction: column;
+	text-align: center;
+	max-width: 1000px;
+	margin: 0 auto;
+	padding: 100px 0;
+}
+#certifications .certification-top {
+	max-width: 400px;
+	margin: 0 auto;
+}
+#certifications .certification-bottom {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-wrap: wrap;
+	margin-top: 50px;
+}
+
+/* .section-meals {
+    padding: 100px;
+} */
+
+.certifications-showcase {
+    list-style: none;
+    width: 100%;
+	
+}
+
+.certifications-showcase li {
+    display: block;
+    float: left;
+    width: 50%;
+	padding: 10px;
+}
+
+.certification-photo {
+    width: 100%;
+    margin: 0;
+    overflow: hidden;
+    background-color: #466060;
+	
+}
+
+.certification-photo img {
+    opacity: 0.7;
+    width: 100%;
+    height: auto;
+    -webkit-transform: scale(1.15);
+    -ms-transform: scale(1.15);
+    transform: scale(1.15);
+    -webkit-transition: -webkit-transform 0.5s, opacity 0.5s;
+    transition: transform 0.5s, opacity 0.5s;
+}
+
+.certification-photo img:hover {
+    opacity: 1;
+    -webkit-transform: scale(1.03);
+    -ms-transform: scale(1.03);
+    transform: scale(1.03);
+}
+
+figcaption {
+	background-color: #466060;
+	color: white;
+	font-style: italic;
+	padding: 2px;
+	text-align: center;
+  }
