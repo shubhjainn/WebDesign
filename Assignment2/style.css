@@ -285,3 +285,145 @@ figcaption {
 	padding: 2px;
 	text-align: center;
   }
+
+
+  /* project Section */
+#project .project {
+	flex-direction: column;
+	max-width: 1200px;
+	margin: 0 auto;
+	width: 90%;
+}
+#project .project-items {
+	/* max-width: 400px; */
+	display: flex;
+    flex-direction: column;
+    align-items: center;
+	width: 100%;
+}
+#project .project-item {
+	width: 50%;
+	padding: 20px;
+	text-align: center;
+	border-radius: 10px;
+	padding: 30px;
+	margin: 30px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: row;
+	box-shadow: 0px 0px 18px 0 #466060;
+	transition: 0.3s ease box-shadow;
+}
+#project .project-item:hover {
+	box-shadow: 0px 0px 5px 0 #466060;
+}
+#project .icon {
+	width: 30%;
+	margin: 0 auto;
+	margin-bottom: 10px;
+}
+
+.project-info{
+	width: 50%;
+}
+#project .project-info h1 {
+	font-size: 2.5rem;
+	font-weight: 500;
+	margin-bottom: 5px;
+}
+#project .project-info p {
+	font-size: 1.3rem;
+	line-height: 2rem;
+	font-weight: 500;
+}
+/*End project Section */
+
+
+
+/* contact Section */
+
+#contact .contact {
+	flex-direction: column;
+	max-width: 1200px;
+	margin: 10% auto;
+	width: 90%;
+	height: 40vh;
+}
+#contact .contact-items {
+	width: 100%;
+	display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+#contact .contact-item {
+	width: 50%;
+	text-align: center;
+	border-radius: 10px;
+	padding: 20px;
+	margin: 30px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: row;
+	box-shadow: 0px 0px 18px 0 #466060;
+	transition: 0.3s ease box-shadow;
+}
+#contact .contact-item:hover {
+	box-shadow: 0px 0px 5px 0 #466060;
+}
+#contact .icon {
+	width: 30%;
+	margin: 0 auto;
+	margin-bottom: 10px;
+}
+
+.contact-info{
+	width: 70%;
+}
+#contact .contact-info a h1 {
+	font-size: 2.5rem;
+	font-weight: 500;
+	margin-bottom: 5px;
+	color: darksalmon;
+}
+#contact .contact-info a {
+	font-size: 1.3rem;
+	line-height: 2rem;
+	font-weight: 500;
+	color: darksalmon;
+
+}
+
+/* Footer */
+#footer {
+	background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
+}
+#footer .footer {
+	min-height: 200px;
+	flex-direction: column;
+	padding-top: 50px;
+	padding-bottom: 10px;
+}
+
+#footer .social-icon {
+	display: flex;
+	margin-bottom: 30px;
+}
+#footer .social-item {
+	height: 50px;
+	width: 50px;
+	margin: 0 5px;
+}
+#footer .social-item img {
+	filter: opacity(30%);
+	transition: 0.3s ease filter;
+}
+#footer .social-item:hover img {
+	filter: grayscale(0);
+}
+#footer p {
+	color: white;
+	font-size: 1.3rem;
+}
+/* End Footer */
