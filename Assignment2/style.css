@@ -214,7 +214,7 @@ p {
 /* End About Section */
 
 /* certifications Section */
-#certifications{
+#certifications {
   background-color: rgb(215, 242, 151);
 }
 #certifications .certifications {
@@ -285,10 +285,9 @@ figcaption {
   text-align: center;
 }
 
-
 /* project Section */
 
-#project{
+#project {
   background-color: #adafef;
 }
 #project .project {
@@ -317,6 +316,7 @@ figcaption {
   flex-direction: row;
   box-shadow: 0px 0px 18px 0 #466060;
   transition: 0.3s ease box-shadow;
+  background-color: whitesmoke;
 }
 #project .project-item:hover {
   box-shadow: 0px 0px 5px 0 #466060;
@@ -374,6 +374,7 @@ figcaption {
   flex-direction: row;
   box-shadow: 0px 0px 18px 0 #466060;
   transition: 0.3s ease box-shadow;
+  background-color: whitesmoke;
 }
 #contact .contact-item:hover {
   box-shadow: 0px 0px 5px 0 #466060;
@@ -397,7 +398,7 @@ figcaption {
   font-size: 1.3rem;
   line-height: 2rem;
   font-weight: 500;
-  color: rgb(21, 52, 164);
+  color: rgb(23, 114, 43);
 }
 
 /* Footer */
