@@ -101,7 +101,7 @@ p {
 }
 
 #intro {
-  background-image: url(back1.jpeg);
+  background-image: url(images/back1.jpeg);
   background-size: cover;
   background-position: top center;
   position: relative;
