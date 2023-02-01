@@ -23,13 +23,13 @@ for (let i = 0; i < hideRow.length; i++) {
 }
 
 document.getElementById('button').disabled = 'disabled';
-
+var rowState = false;
 
 function addNewRow() {
   var table = document.getElementById("myTable");
   var tbodyRef = document.getElementsByTagName("tbody")[0];
   console.log(tbodyRef);
-  var lastStudent =table.lastElementChild.lastElementChild?.previousElementSibling?.firstElementChild?.nextElementSibling?.innerHTML || "Student 4";
+  var lastStudent =table.lastElementChild.lastElementChild?.previousElementSibling?.firstElementChild?.nextElementSibling?.innerHTML || "Student 0";
   var latestIndex = lastStudent.split(" ")[1];
   var tdNode = document.createElement("tr");
   var trCheckBoxCell = document.createElement("td");
@@ -49,7 +49,7 @@ function addNewRow() {
   var trPercentageCell = document.createElement("td");
   trPercentageCell.innerHTML = "100%";
   var trRow =  document.createElement("tr");
-  trRow.innerHTML = `<td colspan="8">Advisor:<br /><br />Award Details<br />Summer 1-2014(TA)<br />Budget Number: <br />Tuition Number: <br />Comments:<br /><br /><br />Award Status:<br /><br /><br /></td>`
+  trRow.innerHTML = `<tr class="dropDownTextArea"><td colspan="8">Advisor:<br /><br />Award Details<br />Summer 1-2014(TA)<br />Budget Number: <br />Tuition Number: <br />Comments:<br /><br /><br />Award Status:<br /><br /><br /></td></tr>`
 
 
   tdNode.appendChild(trCheckBoxCell);
@@ -65,36 +65,49 @@ function addNewRow() {
   tbodyRef.appendChild(tdNode);
   tbodyRef.appendChild(trRow)
 
-  var d = document.getElementsByClassName('dropDownTextArea');
-  for (var i = 0; i < d.length; i++) {
-    d[i].style.display = 'none';
-    // d[i].onClick = function () {
-    //   var tr = this.parentNode.parentNode;
-    //   let ti = tr.rowIndex;
-    //   document.getElementById("myTable").deleteRow(ti);
-    //   //document.getElementById("mainTable").deleteRow(ti);
-    // }
-  }
+
+  var middleRow = table.lastElementChild?.lastElementChild;
+  middleRow.style.display= "none"
+  
+  alert("Record for "+trStudentCell.innerText+" is created successfully!")
+
+  
 
 }
 
 function onCheckBoxClick(checkbox) {
   var rowSelect = checkbox.parentElement.parentElement;
+  var table = document.getElementById("myTable");
+
+  // var headSelect = table.firstElementChild.lastElementChild;
   var colorChange = document.getElementById('button');
 
   if (checkbox.checked == true) {
     rowSelect.style.backgroundColor = "yellow";
+    // var deleteButtonLabel = document.createElement("th");
+    // deleteButtonLabel.innerHTML ='Delete';
+
     var deleteButton = document.createElement("td");
     deleteButton.setAttribute("id", "deleteTd");
     deleteButton.innerHTML ='<button id="delete" type ="button" onclick="deleteFn(this)">Delete</button>';
 
+    // var editButtonLabel = document.createElement("th");
+    // editButtonLabel.innerHTML ='Edit';
+
     var editButton = document.createElement("td");
     editButton.setAttribute("id", "editTd");
-    editButton.innerHTML ='<button id="edit" type = "button" onclick="editRow(this)">Edit</button>';
+    editButton.innerHTML ='<button id="edit" type = "button" onclick="editFn(this)">Edit</button>';
     rowSelect.appendChild(deleteButton);
     rowSelect.appendChild(editButton);
+
+    // headSelect.appendChild(deleteButtonLabel);
+    // headSelect.appendChild(editButtonLabel);
+
     colorChange.style.backgroundColor = "orange";
+    colorChange.style.border="orange"
     colorChange.disabled = "";
+
+
     
     
   } else {
@@ -109,8 +122,8 @@ function onCheckBoxClick(checkbox) {
 
 
 
-function showDropDown(row) {
-  var tr = row.parentNode.parentNode;
+function showDropDown(element) {
+  var tr = element.parentNode.parentNode;
   console.log(tr);
   let ti = tr.rowIndex;
   if (document.getElementsByTagName("tr")[ti + 1].style.display == "none") {
@@ -118,11 +131,27 @@ function showDropDown(row) {
   } else {
     document.getElementsByTagName("tr")[ti + 1].style.display = "none";
   }
+
+  
 }
 
 function deleteFn(row) {
-  var tr = row.parentNode.parentNode;
+  var table = document.getElementById("myTable");
+
+  var tr = row.parentElement.parentElement;
+  var tr_1 = tr.nextElementSibling;
+  console.log(tr_1);
+
   let ti = tr.rowIndex;
+  console.log(ti);
+
+  ti_1 = tr_1.rowIndex;
+  document.getElementById("myTable").deleteRow(ti_1);
   document.getElementById("myTable").deleteRow(ti);
-  alert('Data deleted successfully')
+
+  alert(`Data of ${row.parentElement.parentElement.firstElementChild.nextElementSibling.innerText} deleted successfully`);
+}
+
+function editFn() {
+  prompt("Edit the data below!");
 }
