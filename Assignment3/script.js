@@ -16,6 +16,7 @@ var socialMedia = {
 
 var t = new Title("CONNECT WITH ME!");
 var count = 3;
+var myArray = new Array();
 
 var hideRow = document.getElementsByClassName("dropDownTextArea");
 for (let i = 0; i < hideRow.length; i++) {
@@ -87,6 +88,7 @@ function onCheckBoxClick(checkbox) {
   var colorChange = document.getElementById("button");
 
   if (checkbox.checked == true) {
+    myArray.push(1);
     rowSelect.style.backgroundColor = "yellow";
     // var deleteButtonLabel = document.createElement("th");
     // deleteButtonLabel.innerHTML ='Delete';
@@ -105,15 +107,22 @@ function onCheckBoxClick(checkbox) {
       '<button id="edit" type = "button" onclick="editFn(this)">Edit</button>';
     rowSelect.appendChild(deleteButton);
     rowSelect.appendChild(editButton);
-    colorChange.style.backgroundColor = "orange";
-    colorChange.style.border = "orange";
-    colorChange.disabled = "";
+    if(myArray.length>0){
+      colorChange.style.backgroundColor = "orange";
+      colorChange.style.border = "orange";
+      colorChange.disabled = "";
+    }
+    
   } else {
 
-    
+    myArray.pop(1);
+
+    if(myArray.length==0){
+      colorChange.style.backgroundColor = "grey";
+      colorChange.disabled = "disabled";
+    }
     rowSelect.style.backgroundColor = "#fff";
-    colorChange.style.backgroundColor = "grey";
-    colorChange.disabled = "disabled";
+    
     rowSelect.deleteCell(8);
     rowSelect.deleteCell(8);
     // headSelect.deleteCell(8);
@@ -133,7 +142,10 @@ function showDropDown(element) {
 }
 
 function deleteFn(row) {
-  var table = document.getElementById("myTable");
+ 
+  
+  var colorChange = document.getElementById("button");
+
   var tr = row.parentElement.parentElement;
   var tr_1 = tr.nextElementSibling;
   console.log(tr_1);
@@ -146,6 +158,18 @@ function deleteFn(row) {
   alert(
     `Data of ${row.parentElement.parentElement.firstElementChild.nextElementSibling.innerText} deleted successfully`
   );
+  var table_length = document.getElementById("myTable").rows.length;
+  console.log(table_length)
+  if(table_length==1){
+    document.getElementById("button").style.backgroundColor= "grey";
+
+  }
+  myArray.pop(1);
+  console.log(myArray.length)
+  if(myArray.length==0){
+    colorChange.style.backgroundColor = "grey";
+    colorChange.disabled = "disabled";
+  }
 }
 
 function editFn() {
