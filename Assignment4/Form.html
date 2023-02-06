@@ -1,105 +1,250 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
- <head>
-  <title>Feedback</title>
-  <style>
-    label {	float: left;
-			width: 150px;}
-      #container{
-          width: 700px;
-          margin: auto;
-          background-color: beige;
-      } 
-      main{
-          padding: 50px;
+  <head>
+    <title>Feedback</title>
+    <style>
+      label {
+        float: left;
+        width: 200px;
       }
-  </style>
- </head>
- <body>
- <div id="container">
-	 
-	 <main>
-	 <h2>Feeback</h2>
-	 <h3>Love something? Hate something? Let us know!</h3>
-		 Note : Fields marked with an asterisk(*) are mandatory
-		 <br><br>
-		 <form id="myPost">
-			<label>Title*:</label>
-			<input type="radio" name="title" id="miss" value="miss" required="required"/>Miss
-			<input type="radio" name="title" id="mr" value="mr" required="required"/>Mr.
-			<input type="radio" name="title" id="mrs" value="mrs" required="required"/>Mrs.
-			<br><br>
-			<label for="firstName">First Name*:</label>
-			<input type="text" name="firstName" id="firstName" placeholder="First Name" />	
-			<br><br>
-			
+      #container {
+        width: 700px;
+        margin: auto;
+        background-color: beige;
+      }
+      main {
+        padding: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <main>
+        <h2>Feedback</h2>
+        Note : Fields marked with an asterisk(*) are mandatory
+        <br /><br />
+        <form id="myPost">
+          <label>Title*:</label>
+          <input
+            type="radio"
+            name="title"
+            id="miss"
+            value="miss"
+            required="required"
+          />Miss
+          <input
+            type="radio"
+            name="title"
+            id="mr"
+            value="mr"
+            required="required"
+          />Mr.
+          <input
+            type="radio"
+            name="title"
+            id="mrs"
+            value="mrs"
+            required="required"
+          />Mrs. <br /><br />
+          <label for="firstName">First Name*:</label>
+          <input
+            type="text"
+            name="firstName"
+            id="firstName"
+            placeholder="First Name"
+          />
+          <br /><br />
 
-			<label for="lastName">Last Name*:</label>
-			<input type="text" name="lastName" id="lastName" placeholder="Last Name" />
-			<br><br>
-			
+          <label for="lastName">Last Name*:</label>
+          <input
+            type="text"
+            name="lastName"
+            id="lastName"
+            placeholder="Last Name"
+          />
+          <br /><br />
 
-			<label for="emailId">Email Id*:</label>
-			<input type="text" name="emailId" id="emailId" placeholder="yourname@domain.com" />
-			<br><br>
-			
-			 <div id="error_emailId" style="display: none; color: red;">
-                Invalid Email address, Please enter valid Email in user@northeastern.edu
-                <br><br>
+          <label for="emailId">Email Id*:</label>
+          <input
+            type="text"
+            name="emailId"
+            id="emailId"
+            placeholder="yourname@domain.com"
+          />
+          <br /><br />
+
+          <div id="error_emailId" style="display: none; color: red">
+            Invalid Email address, Please enter valid Email in
+            user@northeastern.edu
+            <br /><br />
+          </div>
+
+          <label for="phoneNumber">Phone Number*:</label>
+          <input
+            type="text"
+            name="phoneNumber"
+            id="phoneNumber"
+            placeholder="xxx-xxx-xxxx"
+          />
+          <br /><br />
+
+          <div id="error_phoneNumber" style="display: none; color: red">
+            Invalid phone number, Please enter valid phone number in
+            xxx-xxx-xxxx format
+            <br /><br />
+          </div>
+
+          <label for="streetAddress1">Street Address 1*:</label>
+          <input
+            type="text"
+            name="streetAddress1"
+            id="streetAddress1"
+            placeholder="address"
+          />
+          <br /><br />
+
+          <label for="streetAddress2">Street Address 2:</label>
+          <input
+            type="text"
+            name="streetAddress2"
+            id="streetAddress2"
+            placeholder="address"
+          />
+          <br /><br />
+
+          <label for="city">City*:</label>
+          <input type="text" name="city" id="city" placeholder="city" />
+          <br /><br />
+
+          <label for="state">State*:</label>
+          <input type="text" name="state" id="state" placeholder="state" />
+          <br /><br />
+
+          <label for="zipCode">ZipCode*:</label>
+          <input type="text" name="zipCode" id="zipCode" placeholder="xxxxx" />
+          <br /><br />
+
+          <div id="error_zipCode" style="display: none; color: red">
+            Invalid Zip Code. Please enter valid US zipcode.
+            <br /><br />
+          </div>
+
+          <div>
+            <label for="programming">Select the programming language:</label>
+            <select id="programming" onchange="selectProgramming(this)">
+              <option value="0">Select your option</option>
+              <option value="1">C++</option>
+              <option value="2">Python</option>
+              <option value="3">Java</option>
+              <option value="4">JavaScript</option>
+              <option value="5">C#</option>
+            </select>
+          </div>
+          <br /><br />
+
+        <div style="display: none;" id="c++">
+            <div>
+              <input type="checkbox" name="c++_1" id="c++_1" />
+			  <label for="c++_1">Proficient in C++</label>
+              <br /><br />
             </div>
 
-			<label for="phoneNumber">Phone Number*:</label>
-			<input type="text" name="phoneNumber" id="phoneNumber" placeholder="xxx-xxx-xxxx" />
-			<br><br>
+			<div>
+				<input type="checkbox" name="c++_2" id="c++_2" />
+				<label for="c++_2">Done projects using C++</label>
+				<br /><br />
+			</div>
+			<br /><br />
 
-			  <div id="error_phoneNumber" style="display: none; color: red;">
-                Invalid phone number, Please enter valid phone number in xxx-xxx-xxxx format
-                <br><br>
+		</div>
+
+
+		<div style="display: none;" id="python">
+            <div>
+              <input type="checkbox" name="python_1" id="python_1" />
+			  <label for="python_1">Proficient in Python</label>
+              <br /><br />
             </div>
 
-			<label for="streetAddress1">Street Address 1*:</label>
-			<input type="text" name="streetAddress1" id="streetAddress1" placeholder="address" />
-			<br><br>
+			<div>
+				<input type="checkbox" name="python_2" id="python_2" />
+				<label for="python_2">Done projects using Python</label>
+				<br /><br />
+			</div>
+			<br /><br />
 
-			<label for="streetAddress2">Street Address 2:</label>
-			<input type="text" name="streetAddress2" id="streetAddress2" placeholder="address" />
-			<br><br>
+		</div>
+         
 
-			<label for="city">City*:</label>
-			<input type="text" name="city" id="city" placeholder="city" />
-			<br><br>
-
-			<label for="state">State*:</label>
-			<input type="text" name="state" id="state" placeholder="state" />
-			<br><br>
-			
-            <label for="zipCode">ZipCode*:</label>
-			<input type="text" name="zipCode" id="zipCode" placeholder="xxxxx" />
-			<br><br>
-
-			 <div id="error_zipCode" style="display: none;color: red">
-                Invalid Zip Code. Please enter valid US zipcode.
-                <br><br>
+		<div style="display: none;" id="java">
+            <div>
+              <input type="checkbox" name="java_1" id="java_1" />
+			  <label for="java_1">Proficient in C++</label>
+              <br /><br />
             </div>
-             
-            <label for="zipcode">How did you hear*:</label>
-			<input type='checkbox' name="source" value="facebook" /> Facebook
-            <input type='checkbox' name="source" value="google" /> Google
-            <input type='checkbox' name="source" value="yelp" /> Yelp 
-			<br><br> 
-             
-			<label for="comments">Comments*:</label>
-			<textarea name="text" id="comments" placeholder="Your comments" rows="5" cols="25"></textarea>
-			<br><br>
-			<input type="Submit">
-			<input type="Reset">
-			<br><br>
-		 </form>
-	 </main>
- </div>
 
- <script type="text/javascript" src="script.js" ></script>
+			<div>
+				<input type="checkbox" name="java_2" id="java_2" />
+				<label for="java_2">Done projects using Java</label>
+				<br /><br />
+			</div>
+			<br /><br />
 
+		</div>
 
- </body>
+		<div style="display: none;" id="js">
+            <div>
+              <input type="checkbox" name="js_1" id="js_1" />
+			  <label for="js_1">Proficient in JavaScript</label>
+              <br /><br />
+            </div>
+
+			<div>
+				<input type="checkbox" name="js_2" id="js_2" />
+				<label for="js_2">Done projects using JavaScript</label>
+				<br /><br />
+			</div>
+			<br /><br />
+
+		</div>
+
+		<div style="display: none;" id="c#">
+            <div>
+              <input type="checkbox" name="c#_1" id="c#_1" />
+			  <label for="c#_1">Proficient in C#</label>
+              <br /><br />
+            </div>
+
+			<div>
+				<input type="checkbox" name="c#_2" id="c#_2" />
+				<label for="c#_2">Done projects using C#</label>
+				<br /><br />
+			</div>
+			<br /><br />
+
+		</div>
+
+          <label for="zipcode">How did you hear*:</label>
+          <input type="checkbox" name="source" value="facebook" /> Facebook
+          <input type="checkbox" name="source" value="google" /> Google
+          <input type="checkbox" name="source" value="yelp" /> Yelp <br /><br />
+
+          <label for="comments">Comments*:</label>
+          <textarea
+            name="text"
+            id="comments"
+            placeholder="Your comments"
+            rows="5"
+            cols="25"
+          ></textarea>
+          <br /><br />
+          <input type="Submit" />
+          <input type="Reset" />
+          <br /><br />
+        </form>
+      </main>
+    </div>
+
+    <script type="text/javascript" src="script.js"></script>
+  </body>
 </html>

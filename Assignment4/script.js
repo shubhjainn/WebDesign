@@ -77,3 +77,41 @@ function submitted(e) {
     alert("Please enter valid details");
   }
 }
+
+function selectProgramming(lang){
+    var selectedLanguage = lang.value
+    if(selectedLanguage == 1){
+        document.getElementById("c++").style.display = "block"; 
+    }
+    else{
+        document.getElementById("c++").style.display = "none"; 
+    }
+
+    if(selectedLanguage == 2){
+        document.getElementById("python").style.display = "block"; 
+    }
+    else{
+        document.getElementById("python").style.display = "none"; 
+    }
+
+    if(selectedLanguage == 3){
+        document.getElementById("java").style.display = "block"; 
+    }
+    else{
+        document.getElementById("java").style.display = "none"; 
+    }
+
+    if(selectedLanguage == 4){
+        document.getElementById("js").style.display = "block"; 
+    }
+    else{
+        document.getElementById("js").style.display = "none"; 
+    }
+
+    if(selectedLanguage == 5){
+        document.getElementById("c#").style.display = "block"; 
+    }
+    else{
+        document.getElementById("c#").style.display = "none"; 
+    }
+}
