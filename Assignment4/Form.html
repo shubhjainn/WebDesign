@@ -15,6 +15,12 @@
       main {
         padding: 50px;
       }
+      .elements{
+        width: 350px;
+        display: flex;
+        justify-content: start;
+        align-items: center;
+      }
     </style>
   </head>
   <body>
@@ -142,87 +148,90 @@
           </div>
           <br /><br />
 
-        <div style="display: none;" id="c++">
-            <div>
-              <input type="checkbox" name="c++_1" id="c++_1" />
-			  <label for="c++_1">Proficient in C++</label>
+          <div style="display: none" id="c++">
+            <div class="elements">
+              <input type="checkbox" name="c++_1" id="c++_1" onclick="showTextArea()"/>
+              <label for="c++_1">Proficient in C++?</label>
+              <input style="display: none" type="text" name="c++_text_1" id="c++_text_1" placeholder="High/Medium/Low"/>
               <br /><br />
             </div>
 
-			<div>
-				<input type="checkbox" name="c++_2" id="c++_2" />
-				<label for="c++_2">Done projects using C++</label>
-				<br /><br />
-			</div>
-			<br /><br />
+            <div class="elements">
+              <input type="checkbox" name="c++_2" id="c++_2"  onclick="showTextArea()" />
+              <label for="c++_2">Done projects using C++?</label>
+              <input style="display: none" type="text" name="c++_text_2" id="c++_text_2" placeholder="How many?"/>
+              <br /><br />
+            </div>
+            <br /><br />
+          </div>
 
-		</div>
-
-
-		<div style="display: none;" id="python">
-            <div>
-              <input type="checkbox" name="python_1" id="python_1" />
-			  <label for="python_1">Proficient in Python</label>
+          <div style="display: none" id="python">
+            <div class="elements">
+              <input type="checkbox" name="python_1" id="python_1" onclick="showTextArea()"/>
+              <label for="python_1">Proficient in Python?</label>
+              <input style="display: none" type="text" name="python_text_1" id="python_text_1" placeholder="High/Medium/Low"/>
               <br /><br />
             </div>
 
-			<div>
-				<input type="checkbox" name="python_2" id="python_2" />
-				<label for="python_2">Done projects using Python</label>
-				<br /><br />
-			</div>
-			<br /><br />
+            <div class="elements">
+              <input type="checkbox" name="python_2" id="python_2"  onclick="showTextArea()" />
+              <label for="python_2">Done projects using Python?</label>
+              <input style="display: none" type="text" name="python_text_2" id="python_text_2" placeholder="How many?"/>
+              <br /><br />
+            </div>
+            <br /><br />
+          </div>
 
-		</div>
-         
-
-		<div style="display: none;" id="java">
-            <div>
-              <input type="checkbox" name="java_1" id="java_1" />
-			  <label for="java_1">Proficient in C++</label>
+          <div style="display: none" id="java">
+            <div class="elements">
+              <input type="checkbox" name="java_1" id="java_1" onclick="showTextArea()"/>
+              <label for="java_1">Proficient in Java?</label>
+              <input style="display: none" type="text" name="java_text_1" id="java_text_1" placeholder="High/Medium/Low"/>
               <br /><br />
             </div>
 
-			<div>
-				<input type="checkbox" name="java_2" id="java_2" />
-				<label for="java_2">Done projects using Java</label>
-				<br /><br />
-			</div>
-			<br /><br />
+            <div class="elements">
+              <input type="checkbox" name="java_2" id="java_2"  onclick="showTextArea()" />
+              <label for="java_2">Done projects using Java?</label>
+              <input style="display: none" type="text" name="java_text_2" id="java_text_2" placeholder="How many?"/>
+              <br /><br />
+            </div>
+            <br /><br />
+          </div>
 
-		</div>
-
-		<div style="display: none;" id="js">
-            <div>
-              <input type="checkbox" name="js_1" id="js_1" />
-			  <label for="js_1">Proficient in JavaScript</label>
+          <div style="display: none" id="js">
+            <div class="elements">
+              <input type="checkbox" name="js_1" id="js_1" onclick="showTextArea()"/>
+              <label for="js_1">Proficient in JavaScript?</label>
+              <input style="display: none" type="text" name="js_text_1" id="js_text_1" placeholder="High/Medium/Low"/>
               <br /><br />
             </div>
 
-			<div>
-				<input type="checkbox" name="js_2" id="js_2" />
-				<label for="js_2">Done projects using JavaScript</label>
-				<br /><br />
-			</div>
-			<br /><br />
+            <div class="elements">
+              <input type="checkbox" name="js_2" id="js_2"  onclick="showTextArea()" />
+              <label for="js_2">Done projects using JavaScript?</label>
+              <input style="display: none" type="text" name="js_text_2" id="js_text_2" placeholder="How many?"/>
+              <br /><br />
+            </div>
+            <br /><br />
+          </div>
 
-		</div>
-
-		<div style="display: none;" id="c#">
-            <div>
-              <input type="checkbox" name="c#_1" id="c#_1" />
-			  <label for="c#_1">Proficient in C#</label>
+          <div style="display: none" id="c#">
+            <div class="elements">
+              <input type="checkbox" name="c#_1" id="c#_1" onclick="showTextArea()"/>
+              <label for="c#_1">Proficient in C# ?</label>
+              <input style="display: none" type="text" name="c#_text_1" id="c#_text_1" placeholder="High/Medium/Low"/>
               <br /><br />
             </div>
 
-			<div>
-				<input type="checkbox" name="c#_2" id="c#_2" />
-				<label for="c#_2">Done projects using C#</label>
-				<br /><br />
-			</div>
-			<br /><br />
-
-		</div>
+            <div class="elements">
+              <input type="checkbox" name="c#_2" id="c#_2"  onclick="showTextArea()" />
+              <label for="c#_2">Done projects using C# ?</label>
+              <input style="display: none" type="text" name="c#_text_2" id="c#_text_2" placeholder="How many?"/>
+              <br /><br />
+            </div>
+            <br /><br />
+          </div>
 
           <label for="zipcode">How did you hear*:</label>
           <input type="checkbox" name="source" value="facebook" /> Facebook
