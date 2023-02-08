@@ -16,11 +16,40 @@
         padding: 50px;
       }
       .elements{
-        width: 350px;
-        display: flex;
-        justify-content: start;
-        align-items: center;
+       height: 60px;
       }
+
+      .input-hidden{
+        height:0;
+        width:0;
+        visibility: hidden;
+        padding:0;
+        margin:0;
+        float:right;
+    }
+    table{
+      border-collapse: collapse;
+      width: 100%;
+      margin: 2%;
+      display: none;
+    }
+
+    th, td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+th {
+  background-color: #2fa3dd;
+  color: white;
+}
+
+.specialcomment{
+  display: none;
+  margin-top:1%;
+}
+
+tr:nth-child(even) {background-color: #f2f2f2;}
     </style>
   </head>
   <body>
@@ -35,21 +64,21 @@
             type="radio"
             name="title"
             id="miss"
-            value="miss"
+            value="Miss"
             required="required"
           />Miss
           <input
             type="radio"
             name="title"
             id="mr"
-            value="mr"
+            value="Mr"
             required="required"
           />Mr.
           <input
             type="radio"
             name="title"
             id="mrs"
-            value="mrs"
+            value="Mrs"
             required="required"
           />Mrs. <br /><br />
           <label for="firstName">First Name*:</label>
@@ -58,6 +87,7 @@
             name="firstName"
             id="firstName"
             placeholder="First Name"
+            required
           />
           <br /><br />
 
@@ -67,6 +97,7 @@
             name="lastName"
             id="lastName"
             placeholder="Last Name"
+            required
           />
           <br /><br />
 
@@ -75,7 +106,8 @@
             type="text"
             name="emailId"
             id="emailId"
-            placeholder="yourname@domain.com"
+            placeholder="yourname@northeastern.edu"
+            required
           />
           <br /><br />
 
@@ -91,6 +123,7 @@
             name="phoneNumber"
             id="phoneNumber"
             placeholder="xxx-xxx-xxxx"
+            required
           />
           <br /><br />
 
@@ -106,6 +139,7 @@
             name="streetAddress1"
             id="streetAddress1"
             placeholder="address"
+            required
           />
           <br /><br />
 
@@ -119,15 +153,15 @@
           <br /><br />
 
           <label for="city">City*:</label>
-          <input type="text" name="city" id="city" placeholder="city" />
+          <input type="text" name="city" id="city" placeholder="city" required/>
           <br /><br />
 
           <label for="state">State*:</label>
-          <input type="text" name="state" id="state" placeholder="state" />
+          <input type="text" name="state" id="state" placeholder="state" required />
           <br /><br />
 
           <label for="zipCode">ZipCode*:</label>
-          <input type="text" name="zipCode" id="zipCode" placeholder="xxxxx" />
+          <input type="text" name="zipCode" id="zipCode" placeholder="xxxxx" required/>
           <br /><br />
 
           <div id="error_zipCode" style="display: none; color: red">
@@ -139,104 +173,94 @@
             <label for="programming">Select the programming language:</label>
             <select id="programming" onchange="selectProgramming(this)">
               <option value="0">Select your option</option>
-              <option value="1">C++</option>
-              <option value="2">Python</option>
-              <option value="3">Java</option>
-              <option value="4">JavaScript</option>
-              <option value="5">C#</option>
+              <option value="C++">C++</option>
+              <option value="Python">Python</option>
+              <option value="Java">Java</option>
+              <option value="JavaScript">JavaScript</option>
+              <option value="C#">C#</option>
             </select>
           </div>
           <br /><br />
 
-          <div style="display: none" id="c++">
+          <div style="display: none; height: 130px;" id="c++">
             <div class="elements">
-              <input type="checkbox" name="c++_1" id="c++_1" onclick="showTextArea()"/>
-              <label for="c++_1">Proficient in C++?</label>
-              <input style="display: none" type="text" name="c++_text_1" id="c++_text_1" placeholder="High/Medium/Low"/>
+              <input type="checkbox" name="lang" id="c++_1" value="WebBrowsers" onclick="showTextArea()"/>Web Browsers
+              <input class="specialcomment" name="lang1" type="text"  id="c++_text_1" placeholder="Experience"/>
               <br /><br />
             </div>
 
             <div class="elements">
-              <input type="checkbox" name="c++_2" id="c++_2"  onclick="showTextArea()" />
-              <label for="c++_2">Done projects using C++?</label>
-              <input style="display: none" type="text" name="c++_text_2" id="c++_text_2" placeholder="How many?"/>
-              <br /><br />
-            </div>
-            <br /><br />
-          </div>
-
-          <div style="display: none" id="python">
-            <div class="elements">
-              <input type="checkbox" name="python_1" id="python_1" onclick="showTextArea()"/>
-              <label for="python_1">Proficient in Python?</label>
-              <input style="display: none" type="text" name="python_text_1" id="python_text_1" placeholder="High/Medium/Low"/>
-              <br /><br />
-            </div>
-
-            <div class="elements">
-              <input type="checkbox" name="python_2" id="python_2"  onclick="showTextArea()" />
-              <label for="python_2">Done projects using Python?</label>
-              <input style="display: none" type="text" name="python_text_2" id="python_text_2" placeholder="How many?"/>
+              <input type="checkbox" name="lang" id="c++_2" value="EmbeddedSystems" onclick="showTextArea()" /> Embedded Systems
+              <input class="specialcomment" name="lang1" type="text" id="c++_text_2" placeholder="Experience"/>
               <br /><br />
             </div>
             <br /><br />
           </div>
 
-          <div style="display: none" id="java">
+          <div style="display: none; height: 130px;" id="python">
             <div class="elements">
-              <input type="checkbox" name="java_1" id="java_1" onclick="showTextArea()"/>
-              <label for="java_1">Proficient in Java?</label>
-              <input style="display: none" type="text" name="java_text_1" id="java_text_1" placeholder="High/Medium/Low"/>
+              <input type="checkbox" name="lang" id="python_1" value="DataScience" onclick="showTextArea()"/>Data Science
+              <input class="specialcomment" name="lang1" type="text"  id="python_text_1" placeholder="Experience"/>
               <br /><br />
             </div>
 
             <div class="elements">
-              <input type="checkbox" name="java_2" id="java_2"  onclick="showTextArea()" />
-              <label for="java_2">Done projects using Java?</label>
-              <input style="display: none" type="text" name="java_text_2" id="java_text_2" placeholder="How many?"/>
-              <br /><br />
-            </div>
-            <br /><br />
-          </div>
-
-          <div style="display: none" id="js">
-            <div class="elements">
-              <input type="checkbox" name="js_1" id="js_1" onclick="showTextArea()"/>
-              <label for="js_1">Proficient in JavaScript?</label>
-              <input style="display: none" type="text" name="js_text_1" id="js_text_1" placeholder="High/Medium/Low"/>
-              <br /><br />
-            </div>
-
-            <div class="elements">
-              <input type="checkbox" name="js_2" id="js_2"  onclick="showTextArea()" />
-              <label for="js_2">Done projects using JavaScript?</label>
-              <input style="display: none" type="text" name="js_text_2" id="js_text_2" placeholder="How many?"/>
+              <input type="checkbox" name="lang" id="python_2" value="WebDevelopment" onclick="showTextArea()" />Web Development
+              <input class="specialcomment" name="lang1" type="text"  id="python_text_2" placeholder="Experience"/>
               <br /><br />
             </div>
             <br /><br />
           </div>
 
-          <div style="display: none" id="c#">
+          <div style="display: none; height: 130px;" id="java">
             <div class="elements">
-              <input type="checkbox" name="c#_1" id="c#_1" onclick="showTextArea()"/>
-              <label for="c#_1">Proficient in C# ?</label>
-              <input style="display: none" type="text" name="c#_text_1" id="c#_text_1" placeholder="High/Medium/Low"/>
+              <input type="checkbox" name="lang" id="java_1" value="AppDevelopment" onclick="showTextArea()"/>App Development
+              <input class="specialcomment" name="lang1" type="text"  id="java_text_1" placeholder="Experience"/>
               <br /><br />
             </div>
 
             <div class="elements">
-              <input type="checkbox" name="c#_2" id="c#_2"  onclick="showTextArea()" />
-              <label for="c#_2">Done projects using C# ?</label>
-              <input style="display: none" type="text" name="c#_text_2" id="c#_text_2" placeholder="How many?"/>
+              <input type="checkbox" name="lang" id="java_2" value="CloudApplications" onclick="showTextArea()" />Cloud Applications
+              <input class="specialcomment" name="lang1" type="text"  id="java_text_2" placeholder="Experience"/>
+              <br /><br />
+            </div>
+            <br /><br />
+          </div>
+
+          <div style="display: none; height: 130px;" id="js">
+            <div class="elements">
+              <input type="checkbox" name="lang" id="js_1" value="WebServers" onclick="showTextArea()"/>Web Servers
+              <input class="specialcomment" name="lang1" type="text"  id="js_text_1" placeholder="Experience"/>
+              <br /><br />
+            </div>
+
+            <div class="elements">
+              <input type="checkbox" name="lang" id="js_2" value="WebApplications" onclick="showTextArea()" />Web Applications
+              <input class="specialcomment" name="lang1" type="text"  id="js_text_2" placeholder="Experience"/>
+              <br /><br />
+            </div>
+            <br /><br />
+          </div>
+
+          <div style="display: none; height: 130px;" id="c#">
+            <div class="elements">
+              <input type="checkbox" name="lang" id="c#_1" value="EnterpriseSoftware" onclick="showTextArea()"/>Enterprise Software
+              <input class="specialcomment" name="lang1" type="text"  id="c#_text_1" placeholder="Experience"/>
+              <br /><br />
+            </div>
+
+            <div class="elements">
+              <input type="checkbox" name="lang" id="c#_2" value="Games" onclick="showTextArea()" />Games
+              <input class="specialcomment" name="lang1" type="text"  id="c#_text_2" placeholder="Experience"/>
               <br /><br />
             </div>
             <br /><br />
           </div>
 
           <label for="zipcode">How did you hear*:</label>
-          <input type="checkbox" name="source" value="facebook" /> Facebook
-          <input type="checkbox" name="source" value="google" /> Google
-          <input type="checkbox" name="source" value="yelp" /> Yelp <br /><br />
+          <input type="checkbox" name="source" value="Facebook" /> Facebook
+          <input type="checkbox" name="source" value="Google" /> Google
+          <input type="checkbox" name="source" value="Yelp" /> Yelp <br /><br />
 
           <label for="comments">Comments*:</label>
           <textarea
@@ -245,14 +269,39 @@
             placeholder="Your comments"
             rows="5"
             cols="25"
+            required
           ></textarea>
           <br /><br />
-          <input type="Submit" />
+          <input type="Submit" id="submit" />
           <input type="Reset" />
           <br /><br />
         </form>
       </main>
     </div>
+
+  <div align="center">
+    <table id="table">     
+      <tr>
+        <th>Title</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Email Id</th>
+        <th>Phone number</th>
+        <th>Street Address 1</th>
+        <th>Street Address 2</th>
+        <th>City</th>
+        <th>State</th>
+        <th>Zip Code</th>
+        <th>Source</th>
+        <th>Programming Language</th>
+        <th>Domain</th>
+        <th>Special Comments</th>
+        <th>Comments</th>
+
+      </tr> 
+  </table>
+</div>
+
 
     <script type="text/javascript" src="script.js"></script>
   </body>
