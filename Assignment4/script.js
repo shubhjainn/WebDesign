@@ -74,22 +74,10 @@ function validate(e) {
       break;
   }
 }
-// write a function submitted
-// function submitted(e) {
-//   //e.preventDefault();
-//   console.log("validname", validName);
-//   if (validName && validEmail && validPhone) {
-//     alert("Data entered succesfull");
-//     //window.location.href = "FeedbackComplete.html";
-//   } else {
-//     alert("Please enter valid details");
-//   }
-// }
 
 function selectProgramming(lang){
     var selectedLanguage = lang.value
 
-   
 
     if(selectedLanguage == "C++"){
       cpp_styling.style.display = "block"; 
@@ -152,8 +140,6 @@ function showTextArea(){
     }
     else{
         document.getElementById("c++_text_1").style.display = "none"; 
-        // document.getElementById('c++_text_1').setAttribute('required',false);
-
     }
 
     if(cpp_checkbox2.checked == true){
@@ -163,7 +149,6 @@ function showTextArea(){
     } 
     else{
       document.getElementById("c++_text_2").style.display = "none"; 
-      // document.getElementById('c++_text_2').setAttribute('required',false);
 
     }
 
@@ -176,7 +161,6 @@ function showTextArea(){
   }
   else{
       document.getElementById("python_text_1").style.display = "none"; 
-      // document.getElementById('python_text_1').setAttribute('required',false);
 
   }
 
@@ -187,7 +171,6 @@ function showTextArea(){
   }
   else{
     document.getElementById("python_text_2").style.display = "none"; 
-    // document.getElementById('python_text_2').setAttribute('required',false);
 
   }
 
@@ -201,7 +184,6 @@ function showTextArea(){
   }
   else{
       document.getElementById("java_text_1").style.display = "none"; 
-      // document.getElementById('java_text_1').setAttribute('required',false);
 
   }
 
@@ -212,7 +194,6 @@ function showTextArea(){
   }
   else{
     document.getElementById("java_text_2").style.display = "none"; 
-    // document.getElementById('java_text_2').setAttribute('required',false);
 
   }
 
@@ -226,7 +207,6 @@ function showTextArea(){
   }
   else{
     document.getElementById("c#_text_1").style.display = "none"; 
-    // document.getElementById('c#_text_1').setAttribute('required',false);
 
   }
 
@@ -237,7 +217,6 @@ function showTextArea(){
   }
   else{
   document.getElementById("c#_text_2").style.display = "none"; 
-  // document.getElementById('c#_text_2').setAttribute('required',false);
 
   }
 
@@ -251,7 +230,6 @@ function showTextArea(){
   }
   else{
     document.getElementById("js_text_1").style.display = "none"; 
-    // document.getElementById('js_text_1').setAttribute('required',false);
 
   }
 
@@ -262,7 +240,6 @@ function showTextArea(){
   }
   else{
   document.getElementById("js_text_2").style.display = "none"; 
-  // document.getElementById('js_text_2').setAttribute('required',false);
 
   }
 
@@ -297,16 +274,10 @@ function submitted(event){
     var sourceSelected = [];
     var domain = [];
     comment_text=[]
-    // var result ='';
 
     var selected_lang = document.querySelector('select').value;
     console.log(selected_lang)
     
-        // result = selected_lang.options[selected_lang.selectedIndex].text;
-        // console.log(result);
-    
-    
-
       for(var i = 0; i < title.length; i++) {
           if(title[i].checked)
           titleSelected = title[i].value;
