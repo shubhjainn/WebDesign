@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/
+	4.0.0/css/bootstrap.min.css">
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/
+	jquery/3.3.1/jquery.min.js">
+	</script>
+	<!-- Popper JS -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/
+	popper.js/1.12.9/umd/popper.min.js">
+	</script>
+	<!-- Latest compiled JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/
+	4.0.0/js/bootstrap.min.js">
+	</script>
+</head>
+<body>
+    <h1 class="text-center text-danger m-4">
+		Calculator Application
+	</h1>
+    <div class="container">
+		<div class="col-lg-8 m-auto d-block">
+			<form method="get" action="./calculator.html">
+				<div class="form-group">
+					<label for="usernames" class="form-label"> Username: </label>
+					<input type="text" name="username" id="usernames" class="form-control">
+					<h6 id="usercheck" style="color: red;"> *Username is missing </h6>
+				</div>
+
+				<div class="form-group">
+					<label for="email" class="form-label"> Email: </label>
+					<input type="email" name="email" id="email" required class="form-control">
+					<small id="emailvalid" class="form-text text-muted invalid-feedback"> 
+						Your email must be a valid email
+					</small>
+				</div>
+
+				<div class="form-group">
+					<label for="password" class="form-label">Password:</label>
+					<input type="password" name="pass" id="password" class="form-control">
+					<h6 id="passcheck" style="color: red;">*Please fill the password</h6>
+				</div>
+
+				<div class="form-group">
+					<label for="confirmpassword" class="form-label">Confirm Password:</label>
+					<input type="password" name="confirmpassword" id="confirmpassword" class="form-control">
+					<h6 id="confirmpasscheck" style="color: red;">*Password does not match</h6>
+				</div>
+
+				<input type="submit" id="submitbtn" value="Submit" class="btn btn-primary" onclick="myFunction();login(loginform)">
+			</form>
+		</div>
+	</div>
+    <script src="start.js"></script>
+
+</body>
+</html>
