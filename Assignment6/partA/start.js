@@ -2,7 +2,6 @@ $(document).ready(function () {
   //hiding the error statements initially
   $("#usercheck").hide();
   $("#passwordcheck").hide();
-  $("#confirmpasswordcheck").hide();
   $("#emailcheck").hide();
 
   //upon releasing the keyboard button, calling up the function
@@ -14,10 +13,7 @@ $(document).ready(function () {
     validatePassword();
   });
 
-  $("#confirmpassword").keyup(function () {
-    validateConfirmPassword();
-  });
-
+  
   $("#email").keyup(function () {
     validateEmail();
   });
@@ -25,7 +21,6 @@ $(document).ready(function () {
   //initializing the variables for error
   let usernameError = true;
   let passwordError = true;
-  let confirmPasswordError = true;
   let emailError = true;
 
   //function for validating username
@@ -48,30 +43,42 @@ $(document).ready(function () {
       return false;
     } else {
       $("#usercheck").hide();
+      usernameError = true;
+
+      return true
     }
   }
 
   function validateEmail() {
     var regex = /(\W|^)[\w.+\-]*@northeastern\.edu(\W|$)/; //a-z@north
     let email = $("#email").val();
-    if (!email.match(regex)) {
+    if (email.length == "") {
       $("#emailcheck").show();
-      $("#emailcheck").html("*Entered email is not in correct format");
+      emailError = false;
+      return false;
+    }
+    else if (!email.match(regex)) {
+      $("#emailcheck").show();
+      $("#emailcheck").html("Enter the email in proper format");
       emailError = false;
       return false;
     } else {
       $("#emailcheck").hide();
+      emailError = true;
+
+      return true
+
     }
   }
 
   function validatePassword() {
     let password = $("#password").val();
     if (password.length == "") {
-      $("#passcheck").show();
+      $("#passwordcheck").show();
       passwordError = false;
       return false;
     }
-    if (password.length < 3 || password.length > 12) {
+    else if (password.length < 3 || password.length > 12) {
       $("#passwordcheck").show();
       $("#passwordcheck").html("*Length of your password must be between 3 and 12");
       $("#passwordcheck").css("color", "red");
@@ -79,31 +86,33 @@ $(document).ready(function () {
       return false;
     } else {
       $("#passwordcheck").hide();
+      passwordError = true;
+
+      return true
+
     }
   }
 
-  $("#submitbtn").click(function () {
+  $("#submitbutton").click(function () {
     validateUsername();
     validatePassword();
-    validateConfirmPassword();
     validateEmail();
-    if (usernameError == true && passwordError == true && confirmPasswordError == true && emailError == true) 
+    console.log(usernameError);
+    console.log(passwordError);
+    console.log(emailError);
+
+    if (usernameError == true && passwordError == true && emailError == true) 
     {
-        return true;
+        var user2=document.getElementById('usernames').value;
+        sessionStorage.setItem("user2", user2);
+        console.log(user2);
+        location.href("calculator.html");
     }
     else {
+        alert('Please fill out all the fields properly!')
         return false;
     }
 });
 
-function login(loginform){
-    var user2=document.getElementById('usernames').value;
-    sessionStorage.setItem("user2", user2);
-    console.log(user2);
-  }		
-  
-  function myFunction() {
-    location.href("start.html");
-  }
 
 });
