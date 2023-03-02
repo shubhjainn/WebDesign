@@ -13,7 +13,6 @@ $(document).ready(function () {
     validatePassword();
   });
 
-  
   $("#email").keyup(function () {
     validateEmail();
   });
@@ -45,7 +44,7 @@ $(document).ready(function () {
       $("#usercheck").hide();
       usernameError = true;
 
-      return true
+      return true;
     }
   }
 
@@ -56,8 +55,7 @@ $(document).ready(function () {
       $("#emailcheck").show();
       emailError = false;
       return false;
-    }
-    else if (!email.match(regex)) {
+    } else if (!email.match(regex)) {
       $("#emailcheck").show();
       $("#emailcheck").html("Enter the email in proper format");
       emailError = false;
@@ -66,8 +64,7 @@ $(document).ready(function () {
       $("#emailcheck").hide();
       emailError = true;
 
-      return true
-
+      return true;
     }
   }
 
@@ -77,10 +74,11 @@ $(document).ready(function () {
       $("#passwordcheck").show();
       passwordError = false;
       return false;
-    }
-    else if (password.length < 3 || password.length > 12) {
+    } else if (password.length < 3 || password.length > 12) {
       $("#passwordcheck").show();
-      $("#passwordcheck").html("*Length of your password must be between 3 and 12");
+      $("#passwordcheck").html(
+        "*Length of your password must be between 3 and 12"
+      );
       $("#passwordcheck").css("color", "red");
       passwordError = false;
       return false;
@@ -88,8 +86,7 @@ $(document).ready(function () {
       $("#passwordcheck").hide();
       passwordError = true;
 
-      return true
-
+      return true;
     }
   }
 
@@ -97,22 +94,14 @@ $(document).ready(function () {
     validateUsername();
     validatePassword();
     validateEmail();
-    console.log(usernameError);
-    console.log(passwordError);
-    console.log(emailError);
 
-    if (usernameError == true && passwordError == true && emailError == true) 
-    {
-        var user2=document.getElementById('usernames').value;
-        sessionStorage.setItem("user2", user2);
-        console.log(user2);
-        location.href("calculator.html");
+    if (usernameError == true && passwordError == true && emailError == true) {
+      var user = document.getElementById("usernames").value;
+      sessionStorage.setItem("user", user);
+      location.href("calculator.html");
+    } else {
+      alert("Please fill out all the fields properly!");
+      return false;
     }
-    else {
-        alert('Please fill out all the fields properly!')
-        return false;
-    }
-});
-
-
+  });
 });

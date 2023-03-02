@@ -1,71 +1,116 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
- <head>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/
-	4.0.0/css/bootstrap.min.css">
-  
-  <title>Form</title>
-  <style>
-    label {	float: left;
-			width: 150px;}
-      #container{
-          width: 700px;
-          margin: auto;
-          background-color: rgb(162, 217, 249);
-          padding:50px ;
-      } 
-      main{
-          padding: 50px;
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/
+	4.0.0/css/bootstrap.min.css"
+    />
+
+    <title>Form</title>
+    <style>
+      label {
+        float: left;
+        width: 150px;
+      }
+      #container {
+        width: 700px;
+        margin: auto;
+        background-color: rgb(162, 217, 249);
+        padding: 50px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
       }
 
-  </style>
+      main {
+        padding: 50px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <div class="uName">
+        <h1 style="padding-bottom: 2%;">Hi <span id="userdisp"></span></h1>
 
-    
- </head>
- <body>
- <div id="container">
-
-    <div class="uName">
-        <h1>Hi <span id="userdisp"></span></h1>
-      
         <h3>Enter the numbers below:</h3>
       </div>
-	 
-	 <main>
-                 
-		 <form id="myForm">
-			
-			<label for="input1" class="form-label">1st Number: </label>
-			<input type="text" name="input1" id="input1" class="form-control" placeholder="1st Number" required/>	
-			<br><br>
-			
-            <label for="input2" class="form-label">2nd number: </label>
-			<input type="text" name="input2" id="input2" class="form-control" placeholder="2nd Number" required/>
-			<br><br>			
 
-            <label for="output" class="form-label">Output: </label>
-			<input type="text" name="output" id="output"class="form-control" placeholder="Result" disabled/>
-			<br><br>
-            
-            <div >
-            <input type="button" class="btn btn-primary" id="add" value="Add">
-            <input type="button" class="btn btn-success" id="subtract" value="Subtract">
-            <input type="button" class="btn btn-warning" id="multiply" value="Multiply">
-            <input type="button" class="btn btn-info" id="divide" value="Divide">
-            <input type="button" class="btn btn-danger" id="reset" value="Reset">
+      <main>
+        <form id="myForm">
+          <label for="input1" class="form-label">1st Number: </label>
+          <input
+            type="text"
+            name="input1"
+            id="input1"
+            class="form-control"
+            placeholder="1st Number"
+            required
+          />
+          <br /><br />
 
-            </div>
+          <label for="input2" class="form-label">2nd number: </label>
+          <input
+            type="text"
+            name="input2"
+            id="input2"
+            class="form-control"
+            placeholder="2nd Number"
+            required
+          />
+          <br /><br />
 
-        </form>         
-    </main>
+          <label for="output" class="form-label">Output: </label>
+          <input
+            type="text"
+            name="output"
+            id="output"
+            class="form-control"
+            placeholder="Result"
+            disabled
+          />
+          <br /><br />
+
+          <div>
+            <input type="button" class="btn btn-primary" id="add" value="Add" />
+            <input
+              type="button"
+              class="btn btn-success"
+              id="subtract"
+              value="Subtract"
+            />
+            <input
+              type="button"
+              class="btn btn-warning"
+              id="multiply"
+              value="Multiply"
+            />
+            <input
+              type="button"
+              class="btn btn-info"
+              id="divide"
+              value="Divide"
+            />
+            <input
+              type="button"
+              class="btn btn-danger"
+              id="reset"
+              value="Reset"
+            />
+          </div>
+        </form>
+      </main>
     </div>
     <script src="calculator.js"></script>
     <script>
-        var user2 = sessionStorage.getItem("user2");
-        console.log(user2);
-        document.getElementById('userdisp').innerHTML=user2;
-        </script>
-    </body>
-    </html>
-
-			
+      var user = sessionStorage.getItem("user");
+      document.getElementById("userdisp").innerHTML = user;
+    </script>
+  </body> 
+</html>

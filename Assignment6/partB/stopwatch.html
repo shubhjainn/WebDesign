@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stop Watch</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/
+	4.0.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="stopwatch.js"></script>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+    
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <h1></h1>
+    <div class="container" style="width: 400px; height: 400px;  background-color: lavender;">
+    <h1>Stopwatch</h1>
+    <br>
+    <h2><span id="time">00:00:00</span><br/></h2>
+    <br>
+    <div>
+        <input type="button" id="start" value="START" class="btn btn-primary">
+        <input type="button" id="stop" value="STOP" class="btn btn-success">
+        <input type="button" id="reset" value="RESET" class="btn btn-warning">
+    </div>
+    
+</div>
+
+</body>
+</html>
