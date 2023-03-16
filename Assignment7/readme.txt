@@ -1,13 +1,11 @@
-login.html
-Flexbox- form uses flexbox
-scss file used is login.scss
+login.html, scss file used is login.scss
+Flexbox- login form uses flexbox
 display is set to flex, flex-direction is set to column, justify content is set to center
 Variables Nesting Custom properties- login page uses all 3
 
 
-homepage.html
+homepage.html, the main scss file is the style.scss
 Flexbox- navbar uses flex
-the main scss file is the style.scss
 Nesting- used throughout the scss file
 Variables- are being placed in config file that stores the font weight and the various colours used.
 Function- is used in config file which is used to change the color of the text color according to the background color
