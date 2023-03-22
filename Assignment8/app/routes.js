@@ -78,7 +78,13 @@ router.post("/create", async (req, res) => {
 //put request
 router.put('/edit/:email', async (req, res) => {
     try {
-      let users = await User.findOneAndUpdate(req.params.email);
+      let users = await User.findOneAndUpdate(
+        { email: req.params.email },
+      { fullName: req.body.fullName, password: req.body.password }
+      );
+      if (!users) {
+        return res.status(404).send("User with email " + req.params.email + " not found");
+      }
       if (req.body.fullName) users.fullName = req.body.fullName;
   
       if (req.body.password) {
