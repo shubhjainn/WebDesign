@@ -3,7 +3,6 @@ const bcrypt = require("bcryptjs");
 const User = require("./model/user");
 
 
-
 //get request
 router.get('/getAll', async (req, res) => {
     try {
@@ -21,16 +20,19 @@ router.post("/create", async (req, res) => {
   try {
     const { fullName, email, password } = req.body;
 
+    //checking if all fields have been entered
     if (!fullName || !email || !password) {
-      return res.status(400).json({ msg: "Not all fields have been entered" });
+      return res.status(400).json({ msg: "All fields have not been entered" });
     }
 
+    //checking if fullname matches the regex
     if (!(fullName.match(/^([\w]{3,})+\s+([\w\s]{3,})+$/))) {
       return res
-        .status(400).json({ msg: "First name should be of length>3 & Lastname also should be of length>3. There should be space in between them." });
+        .status(400).json({ msg: "First name should be of length>=3 & Lastname also should be of length>=3. There should be space in between them." });
     }
 
 
+    //checking if password matches the regex
     if (!password.match(/^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$/)) {
         return res
           .status(400)
@@ -38,6 +40,7 @@ router.post("/create", async (req, res) => {
       }
 
 
+      //checking if email matches the regex
     if (!(email.match(/(\W|^)[\w.+\-]*@northeastern\.edu(\W|$)/))) {
       return res
         .status(400).json({ msg: "Please enter the email in @northeastern.edu format" });
@@ -60,11 +63,9 @@ router.post("/create", async (req, res) => {
       fullName: fullName,
       email: email,
       password: passwordHash,
-
     });
     const savedUser = await newUser.save();
-    //res.json(savedUser);
-    res.send("New user added");
+    res.send("New user has been successfully added");
 
   }
 
@@ -78,12 +79,13 @@ router.post("/create", async (req, res) => {
 //put request
 router.put('/edit/:email', async (req, res) => {
     try {
+      //finding email from the query and fullname,password from request body and updating only the fullname & password
       let users = await User.findOneAndUpdate(
         { email: req.params.email },
       { fullName: req.body.fullName, password: req.body.password }
       );
       if (!users) {
-        return res.status(404).send("User with email " + req.params.email + " not found");
+        return res.status(404).send("User having email " + req.params.email + " not found");
       }
       if (req.body.fullName) users.fullName = req.body.fullName;
   
@@ -95,7 +97,7 @@ router.put('/edit/:email', async (req, res) => {
       }
   
       const u1 = await users.save();
-      return res.send("User with email " + req.params.email + " updated");
+      return res.send("User Details having email " + req.params.email + " has been updated");
     }
     catch (error) {
       res.status(500).json({ err: error.message });
@@ -114,11 +116,11 @@ router.delete('/delete/:email', async (req, res) => {
       .exec()
       .then(doc => {
         if (!doc) { return res.status(404).end(); }
-        return res.send("User with email " + req.params.email + " deleted");
+        return res.send("User having email " + req.params.email + " has been deleted");
       })
   }
   else {
-    return res.send("User with email " + req.params.email + " does not exist");
+    return res.send("User having email " + req.params.email + " does not exist");
   }
 
 
