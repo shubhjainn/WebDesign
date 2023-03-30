@@ -39,16 +39,16 @@ function Home() {
     return (
         <div>
             <Navbar title="home" />
-            <div className="game-title-header">
+            <div className="music-title-header">
             <h1>
             JamminJive
             </h1>
             </div>
 
-            <div className="games-title">
+            <div className="music-title">
                 <h1>Hit Music Albums</h1>
             </div>
-            <div className="games-container">
+            <div className="music-container">
                 {imageUrls.map(imageUrl => (<Card
                     key={imageUrl.id}
                     src={imageUrl.url}
